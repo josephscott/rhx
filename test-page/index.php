@@ -27,6 +27,10 @@ if ( !empty( $_SERVER['HTTP_X_RHX'] ) && (int) $_SERVER['HTTP_X_RHX'] === 1 ) {
 
 <h1>Test Page: rhx</h1>
 
+<p>
+The raw XHR response object is also logged in the console.
+</p>
+
 <div class="big-blocks">
 <h3>Actions</h3>
 <hr />
