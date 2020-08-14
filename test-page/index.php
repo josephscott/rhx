@@ -44,21 +44,16 @@ if ( !empty( $_SERVER['HTTP_X_RHX'] ) && (int) $_SERVER['HTTP_X_RHX'] === 1 ) {
 </div>
 
 <script>
-function show_results( resp_event ) {
+function show_results( test_name, resp_event ) {
 	console.log( resp_event );
 
 	var r = document.getElementById( "results" );
-	r.innerText = JSON.stringify( resp_event, undefined, 2 );
+	r.innerHTML = "*** " + test_name + " ***\n"; 
+	r.innerText += resp_event.target.responseText;
 }
 
 function test_001() {
-	console.log( "test_001" );
-
-	rhx.get( "./", {
-		on_load: function( e ) {
-			show_results( e );
-		}
-	} );
+	rhx.get( "./", { on_load: function( e ) { show_results( "test_001", e ); } } );
 }
 </script>
 
