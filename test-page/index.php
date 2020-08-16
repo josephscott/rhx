@@ -1,13 +1,15 @@
 <?php
 if ( !empty( $_SERVER['HTTP_X_RHX'] ) && (int) $_SERVER['HTTP_X_RHX'] === 1 ) {
-	// test_001
-	if ( count( $_GET ) === 0 ) {
-		echo 'RESPONSE';
+	if ( $_GET['test'] === 'test_001' ) {
+		echo 'GET Response';
 	}
 
-	// test_002
-	if ( count( $_GET ) >= 1 ) {
+	if ( $_GET['test'] === 'test_002' ) {
 		print_r( $_GET );
+	}
+
+	if ( $_GET['test'] === 'test_003' ) {
+		echo 'POST Response';
 	}
 
 	exit;
@@ -56,7 +58,7 @@ The raw XHR response object is also logged in the console.
 <p>
 <script>
 function test_001() {
-	rhx.get( "", { on_load: function( e ) { show_results( "test_001", e ); } } );
+	rhx.get( "?test=test_001", { on_load: function( e ) { show_results( "test_001", e ); } } );
 }
 document.write( test_001.toString() );
 </script>
@@ -67,7 +69,7 @@ document.write( test_001.toString() );
 <p>
 <script>
 function test_002() {
-	rhx.get( "?color=green&animal=dog", { on_load: function( e ) { show_results( "test_002", e ); } } );
+	rhx.get( "?test=test_002&color=green&animal=dog", { on_load: function( e ) { show_results( "test_002", e ); } } );
 }
 document.write( test_002.toString() );
 </script>
@@ -78,7 +80,7 @@ document.write( test_002.toString() );
 <p>
 <script>
 function test_003() {
-	rhx.post( "", { on_load: function( e ) { show_results( "test_003", e ); } } );
+	rhx.post( "?test=test_003", { on_load: function( e ) { show_results( "test_003", e ); } } );
 }
 document.write( test_003.toString() );
 </script>
