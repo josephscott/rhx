@@ -5,6 +5,11 @@ if ( !empty( $_SERVER['HTTP_X_RHX'] ) && (int) $_SERVER['HTTP_X_RHX'] === 1 ) {
 		echo 'RESPONSE';
 	}
 
+	// test_002
+	if ( count( $_GET ) >= 1 ) {
+		print_r( $_GET );
+	}
+
 	exit;
 }
 ?>
@@ -36,6 +41,7 @@ The raw XHR response object is also logged in the console.
 <hr />
 
 <p><button type="button" onclick="test_001()">Test 001: Simple GET</button></p>
+<p><button type="button" onclick="test_002()">Test 002: GET with variables</button></p>
 
 </div>
 
@@ -58,6 +64,10 @@ function show_results( test_name, resp_event ) {
 
 function test_001() {
 	rhx.get( "", { on_load: function( e ) { show_results( "test_001", e ); } } );
+}
+
+function test_002() {
+	rhx.get( "?color=green&animal=dog", { on_load: function( e ) { show_results( "test_002", e ); } } );
 }
 </script>
 
