@@ -12,6 +12,10 @@ if ( !empty( $_SERVER['HTTP_X_RHX'] ) && (int) $_SERVER['HTTP_X_RHX'] === 1 ) {
 		echo 'POST Response';
 	}
 
+	if ( $_GET['test'] === 'test_004' ) {
+		print_r( $_POST );
+	}
+
 	exit;
 }
 ?>
@@ -85,6 +89,25 @@ document.write( test_003.toString() );
 </script>
 <p><button type="button" onclick="test_003()">Test 003: Simple POST</button></p>
 </p>
+<hr />
+
+<p>
+<script>
+function test_004() {
+	rhx.post(
+		"?test=test_004",
+		{
+			data: {
+				color: "purple",
+				animal: "cat"
+			},
+			on_load: function( e ) { show_results( "test_004", e ); }
+		}
+	);
+}
+document.write( test_004.toString() );
+</script>
+<p><button type="button" onclick="test_004()">Test 004: POST with data</button></p>
 
 </div>
 
