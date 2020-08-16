@@ -4,8 +4,8 @@ var rhx = {
 	// Issue GET request via XHR
 	//
 	// url: Target URL for the request
-	// options.on_load: Function called for on_load event
-	// options.on_error: Function called for on_error event
+	// options.on_load: Function called for the on_load event
+	// options.on_error: Function called for the on_error event
 	get( url, options ) {
 		// Defaults
 		var opt = {
