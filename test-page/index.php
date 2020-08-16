@@ -57,7 +57,7 @@ function show_results( test_name, resp_event ) {
 }
 
 function test_001() {
-	rhx.get( "./", { on_load: function( e ) { show_results( "test_001", e ); } } );
+	rhx.get( "", { on_load: function( e ) { show_results( "test_001", e ); } } );
 }
 </script>
 
