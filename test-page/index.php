@@ -75,6 +75,17 @@ document.write( test_002.toString() );
 </p>
 <hr />
 
+<p>
+<script>
+function test_003() {
+	rhx.post( "", { on_load: function( e ) { show_results( "test_003", e ); } } );
+}
+document.write( test_003.toString() );
+</script>
+<p><button type="button" onclick="test_003()">Test 003: Simple POST</button></p>
+</p>
+<hr />
+
 </div>
 
 <div class="big-blocks border-left">
