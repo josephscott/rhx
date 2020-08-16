@@ -28,6 +28,9 @@ if ( !empty( $_SERVER['HTTP_X_RHX'] ) && (int) $_SERVER['HTTP_X_RHX'] === 1 ) {
 	.border-left {
 		border-left: 1px solid #bebebe;
 	}
+	.clear {
+		clear: both;
+	}
 	</style>
 	<script>
 	function show_results( test_name, resp_event ) {
@@ -46,10 +49,6 @@ if ( !empty( $_SERVER['HTTP_X_RHX'] ) && (int) $_SERVER['HTTP_X_RHX'] === 1 ) {
 <p>
 The raw XHR response object is also logged in the console.
 </p>
-
-<p><pre>
-<script>document.write( show_results.toString() );</script>
-</pre></p>
 
 <div class="big-blocks">
 <h3>Actions</h3>
@@ -97,6 +96,11 @@ document.write( test_003.toString() );
 <pre id="results"></pre>
 
 </div>
+
+<hr class="clear" />
+<p><pre>
+<script>document.write( show_results.toString() );</script>
+</pre></p>
 
 </body>
 </html>
