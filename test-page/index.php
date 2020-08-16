@@ -72,7 +72,7 @@ function test_002() {
 }
 document.write( test_002.toString() );
 </script>
-<p><button type="button" onclick="test_002()">Test 002: GET with variables</button></p>
+<p><button type="button" onclick="test_002()">Test 002: GET with data</button></p>
 </p>
 <hr />
 
