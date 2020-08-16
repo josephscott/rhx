@@ -25,8 +25,8 @@ if ( !empty( $_SERVER['HTTP_X_RHX'] ) && (int) $_SERVER['HTTP_X_RHX'] === 1 ) {
 		padding: 0 5px 5px 5px;
 		width: 45%;
 	}
-	.border-left {
-		border-left: 1px solid #bebebe;
+	.border-right {
+		border-right: 1px solid #bebebe;
 	}
 	.clear {
 		clear: both;
@@ -50,7 +50,7 @@ if ( !empty( $_SERVER['HTTP_X_RHX'] ) && (int) $_SERVER['HTTP_X_RHX'] === 1 ) {
 The raw XHR response object is also logged in the console.
 </p>
 
-<div class="big-blocks">
+<div class="big-blocks border-right">
 <h3>Actions</h3>
 <hr />
 
@@ -85,11 +85,10 @@ document.write( test_003.toString() );
 </script>
 <p><button type="button" onclick="test_003()">Test 003: Simple POST</button></p>
 </p>
-<hr />
 
 </div>
 
-<div class="big-blocks border-left">
+<div class="big-blocks">
 <h3>Results</h3>
 <hr />
 
