@@ -1,3 +1,11 @@
 {
-	"name": "rhx"
+	"name": "rhx",
+	"author": "Joseph Scott <joseph@josephscott.org> (https://josephscott.org/)",
+	"version": "0.1.0",
+	"devDependencies": {
+		"uglify-js": "3.10.1"
+	},
+	"scripts": {
+		"minify": "uglifyjs -c -m -o dist/rhx.min.js src/rhx.js"
+	}
 }
