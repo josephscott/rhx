@@ -6,7 +6,7 @@ var rhx = {
 	// url: (string) Target URL for the request
 	// options.on_load: (string) Function called for the on_load event
 	// options.on_error: (string) Function called for the on_error event
-	get( url, options ) {
+	get: function ( url, options ) {
 		// Defaults
 		var opt = {
 			on_load: function( e ) { console.log( e ); },
@@ -34,7 +34,7 @@ var rhx = {
 	// options.data: (object) Set of key / value pairs to send
 	// options.on_load: (string) Function called for the on_load event
 	// options.on_error: (string) Function called for the on_error event
-	post( url, options ) {
+	post: function ( url, options ) {
 		// Defaults
 		var opt = {
 			data: {},
@@ -49,7 +49,7 @@ var rhx = {
 
 		// Glue together the key/value pairs
 		var encoded_pairs = [];
-		for ( var k of Object.keys( opt.data ) ) {
+		for ( var k in opt.data ) {
 			encoded_pairs.push(
 				encodeURIComponent( k )
 				+ "=" +
